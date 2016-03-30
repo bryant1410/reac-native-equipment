@@ -116,29 +116,6 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 
 
 
-
-
-## 技巧
-
-如果业务需要在webView中触发了点击事件，需要传递参数给外层。
-
-可以通过点击事件改变hash，外层监听 onNavigationStateChange；
-或者使用 [react-native-webview-bridge](https://github.com/alinz/react-native-webview-bridge)
-
-#### 获取屏幕长宽 
-
-```
-import Dimensions from 'Dimensions';
-const {width , height} = Dimensions.get('window');
-```
-
-#### 请求延迟执行
-
-```
- const fetchWithTimeout(timeout, ...args){
- 	return Promise.race( [fetch(...args) , delay(timeout) ] )
- }
-```
 ##约定
 具体可参考 [AIRBNB的react代码规范](https://github.com/cnsnake11/react-native-coding-style)
 ### 文件名
@@ -222,6 +199,9 @@ const {width , height} = Dimensions.get('window');
 当调用异步API时，一般都需要三个状态：请求开始、请求成功、请求错误。
 为了区分这三种状态，我们在action中添加一个专门的status字段作为标记位。
 
+
+
+
 ## 标准组件格式
 以下是标准的组件js文件。包含引入包、样式声明、组件声明、组件传值声明。
 
@@ -249,6 +229,41 @@ const {width , height} = Dimensions.get('window');
 		demo : PropTypes.string.isRequired
 	}
 ```
+
+
+
+## 技巧
+
+如果业务需要在webView中触发了点击事件，需要传递参数给外层。
+
+可以通过点击事件改变hash，外层监听 onNavigationStateChange；
+或者使用 [react-native-webview-bridge](https://github.com/alinz/react-native-webview-bridge)
+
+#### 获取屏幕长宽 
+
+```
+import Dimensions from 'Dimensions';
+const {width , height} = Dimensions.get('window');
+```
+
+#### 请求延迟执行
+
+```
+ const fetchWithTimeout(timeout, ...args){
+ 	return Promise.race( [fetch(...args) , delay(timeout) ] )
+ }
+```
+
+#### 在安卓上，使用navtigator切换时，解决流畅
+配置**configureScene**为 FadeAndroid
+
+```
+	<Navigator
+		configureScene ={(route,routeStack)=> Navigator.SceneConfigs.FadeAndroid }
+		/>
+```
+
+
 
 ##已知问题
 

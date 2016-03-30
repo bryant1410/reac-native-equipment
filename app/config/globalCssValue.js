@@ -28,11 +28,12 @@ const CSS_VALUE = {
     'GB_COLORS': {
         'MAIN': '#f3f3f3',
         'SECOND': '#FFFFFF',
-        'RGBA_WHITE': 'rgba(0,0,0,0.95)'
+        'RGBA_WHITE': 'rgba(255,255,255,0.95)'
     },
     'RADIUS': 8,//圆角半径
     'HEIGHT': {
         'TARBAR': 40,
+        'NAV': 50
     }
 };
 

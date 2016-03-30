@@ -18,7 +18,8 @@ import STYLE_SHEET from '../../config/globalStyleSheet';
 import {AICHOOSE_IMG} from '../../config/image';
 
 import Tabbar from '../../components/commons/Tabbar';//底部栏
-import Feeling from './Feeling';//跑步目的
+import ResultThumb from './ResultThumb';//上一次选装结果
+import Feeling from './ChooseFeeling';//跑步目的
 
 import Dimensions from 'Dimensions';
 const {width,height} = Dimensions.get('window');
@@ -27,6 +28,15 @@ let styles = StyleSheet.create({
     bg: {
         width: width,
         height: height - CSS_VALUE.HEIGHT.TARBAR
+    },
+    //上一次选装结果
+    resultThumb: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 80,
+        paddingLeft: 10,
+        paddingRight: 10
     },
     //开始按钮
     btnStart: {
@@ -61,15 +71,25 @@ export default class Index extends Component {
     }
 
     render() {
-        const {actions,tabSelect} =this.props;
+        const {actions,tabSelect,hasLastResult,lastResult,equips,navigator} =this.props;
+
         return (
             <View style={STYLE_SHEET.COLUMN_CONTAINER}>
+
                 <View style={{flex:1}}>
                     <Image
                         style={styles.bg}
                         source={AICHOOSE_IMG.BG}
                         resizeMode="cover"
                         />
+                    {hasLastResult &&
+                    <View style={styles.resultThumb}>
+                        <ResultThumb lastResult={lastResult}
+                                     equips={equips}
+                                     actions={actions}
+                                     navigator={navigator}/>
+                    </View>
+                    }
                     <View style={styles.btnStart}>
                         <TouchableOpacity
                             underlayColor='rgba(0,0,0,0.1)'
@@ -82,6 +102,7 @@ export default class Index extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
+
                 <View>
                     <Tabbar selected={tabSelect} actions={actions}/>
                 </View>
@@ -94,3 +115,4 @@ Index.propTypes = {
     actions: PropTypes.object.isRequired,
     tabSelect: PropTypes.string.isRequired
 }
+

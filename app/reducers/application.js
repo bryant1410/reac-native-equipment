@@ -10,7 +10,7 @@ import {APP} from '../config/actionType';
 //初始化状态
 const initialState = {
     isShowSplash: true,//是否展示闪屏
-    tabSelect: 'aichoose',//默认底部栏选中装备库
+    tabSelect: 'equipment',//默认底部栏选中装备库
 }
 
 const actionHandle = {

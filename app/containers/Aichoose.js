@@ -41,6 +41,7 @@ export default class Aichoose extends Component {
             <Navigator
                 initialRoute={{component:Index}}
                 navigationBar={<NavigatorBar/>}
+                configureScene={(route,routeStack)=>Navigator.SceneConfigs.FadeAndroid}
                 renderScene={ this.renderScene.bind(this)}
                 />
         )

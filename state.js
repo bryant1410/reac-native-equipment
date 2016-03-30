@@ -8,7 +8,7 @@ const state={
 		hasLastResult:true,//是否存在上一次选装结果
 		fetchState:'start/error/success',//请求选装结果状态
 		//上一次选装结果
-		lastResult:{
+		A:{
 			time:86400,//上次选装时间
 			id:1024,//选装结果id
 			match_tag:"EAAEAC",//匹配的标签

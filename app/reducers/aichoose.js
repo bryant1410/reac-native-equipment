@@ -8,7 +8,33 @@ import createReducer from '../utils/create-reducer';
 import {AICHOOSE} from '../config/actionType';
 
 //初始化状态
-const initialState = {}
+const initialState = {
+    hasLastResult: true,
+    fetchState: '',
+    lastResult: {
+        id: '',
+        time: '',
+        match_tag: '',
+        similar_tag: [],
+        equip_word: [],
+        person_slogan: '',
+        person_word: [],
+    },
+    equips: {
+        match: [],
+        similar: []
+    },
+    chooseItem: {
+        feeling_type: '',
+        sex: '',
+        weight: '',
+        amount: '',
+        arch: '',
+        spin: '',
+        track_type: '',
+        price: ''
+    }
+}
 
 const actionHandle = {}
 

@@ -48,7 +48,7 @@ class App extends Component {
 
     render() {
         //从reducer中获取应用的状态
-        const {application,actions} = this.props;
+        const {application,actions,aichoose} = this.props;
         const {isShowSplash,tabSelect} =application;
         //是否显示闪屏
         if (isShowSplash) {
@@ -60,10 +60,10 @@ class App extends Component {
         return (
             <View style={{flex:1}}>
                 {tabSelect == 'aichoose' &&
-                <Aichoose actions={actions} tabSelect={tabSelect}/>
+                <Aichoose {...aichoose} actions={actions} tabSelect={tabSelect}/>
                 }
                 {tabSelect == 'equipment' &&
-                <Equipment actions={actions}/>
+                <Equipment actions={actions} tabSelect={tabSelect}/>
                 }
                 {tabSelect == 'utils' &&
                 <Utils actions={actions}/>
@@ -88,7 +88,8 @@ function mapStateToProps(state) {
         application: {
             isShowSplash: state.application.isShowSplash,
             tabSelect: state.application.tabSelect
-        }
+        },
+        aichoose:state.aichoose
     }
 }
 
