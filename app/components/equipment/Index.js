@@ -14,6 +14,7 @@ import STYLE_SHEET from '../../config/globalStyleSheet';
 
 import Tabbar from '../commons/Tabbar';//底部
 import EquipNav from './EquipNav';//顶部导航
+import EquipCate from './EquipCate';//装备分类
 
 let styles = StyleSheet.create({});
 export default class Index extends Component {
@@ -24,6 +25,7 @@ export default class Index extends Component {
                 <View style={{height:CSS_VALUE.HEIGHT.NAV}}>
                     <EquipNav actions={actions}/>
                 </View>
+                <EquipCate/>
                 <View style={{flex:1}}>
                 </View>
                 <View>
