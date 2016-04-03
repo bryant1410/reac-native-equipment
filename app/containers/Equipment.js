@@ -13,7 +13,6 @@ import React,{
 } from 'react-native';
 
 import Navigation from '../components/commons/Navigation';//顶部导航
-
 import Index from '../components/equipment/Index';//首页
 
 let styles = StyleSheet.create({});

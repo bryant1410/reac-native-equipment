@@ -54,7 +54,7 @@ export default class ResultThumb extends Component {
 
     onPress() {
         const {router} = this.props;
-        router.toResult(this.props);
+        router.toResult();
     }
 
     //获取第一出线的跑鞋的信息

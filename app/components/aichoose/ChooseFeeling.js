@@ -12,6 +12,7 @@ import React,{
 
 export default class Feeling extends Component {
     render() {
+        console.log('FeelingProps',this.props);
         return (
             <View>
                 <Text>HELLO</Text>

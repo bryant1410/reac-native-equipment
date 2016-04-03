@@ -12,7 +12,8 @@
     - commons 公共组件
     	- Loading.js 加载中
     	- Toast.js 简单提示
-    	- NavigatorBar.js 导航栏
+    	- Navigation.js 导航栏
+    	- Router.js 路由配置
   - **containers** 存放顶层容器
   	 - App.js app进入逻辑总页面
   	 - SplashScrenn.js 闪屏
@@ -29,7 +30,6 @@
   	 - BackPress.js 返回按钮监控 
   	 - create-reducer.js reducer生成器
   - **root.js** 应用最顶层入口
-  - **router.js** 路由配置
 - data 应用的本地数据
 
 
@@ -63,6 +63,8 @@
 * [百川推送](http://baichuan.taobao.com/doc2/detail.htm?spm=a3c0d.7929580.0.0.0NRArQ&treeId=29&articleId=102337&docType=1) 阿里旗下的百川推送
 * [腾讯Bugly](http://bugly.qq.com/) app质量跟踪平台
 * [分词搜查](http://yunsou.qq.com/) 腾讯旗下的分词 搜索工具
+
+
 ## 原生组件
 
 - **Component** 组件抽象类
@@ -93,6 +95,8 @@
 路由对象管理是指：把应用中所有的都有路由地址统一交给路由中心管理。该路由中心负责存储应用的所有路由地址以及对应的组件。   
 路由中心像一个配置文件。通过路由中心，减少应用转跳带来的逻辑问题。   
 路由转跳组件：目前的navitagor组件都未能实现高度的定制化，因此封装系统自带的导航组件，保留其导航功能，实现自定义导航界面。
+这个路由与 reduce关联起来，每个组件不需要显示传递参数actions，路由将会自动传递 actions
+
 
 
 ### 公共样式管理
@@ -119,6 +123,7 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 
 ##约定
 具体可参考 [AIRBNB的react代码规范](https://github.com/cnsnake11/react-native-coding-style)
+
 ### 文件名
 使用驼峰命名且首字母大写，如 TextView.js
 

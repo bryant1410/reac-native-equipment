@@ -63,8 +63,8 @@ let styles = StyleSheet.create({
 export default class Index extends Component {
 
     onStartPress() {
-        const {actions,router} =this.props;
-        router.toChooseFeeling({actions:actions});
+        const {router} =this.props;
+        router.toChooseFeeling();
     }
 
     render() {

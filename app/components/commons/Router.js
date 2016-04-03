@@ -2,10 +2,13 @@
  * 路由配置类
  */
 'use strict';
-
+import {Navigator} from 'react-native';
+//智能选装
 import Feeling from '../aichoose/ChooseFeeling';//跑步目的
 import Result from '../aichoose/Result';//选装结果页
-
+//装备库
+//工具
+//关于
 
 export default class Router {
     constructor(navigator) {
@@ -23,7 +26,8 @@ export default class Router {
     toChooseFeeling(params) {
         this.navigator.push({
             component: Feeling,
-            params: params
+            params: params,
+            sceneConfig: Navigator.SceneConfigs.FadeAndroid
         })
     }
 
@@ -31,6 +35,6 @@ export default class Router {
         this.navigator.push({
             component: Result,
             params: params
-        })
+        });
     }
 }

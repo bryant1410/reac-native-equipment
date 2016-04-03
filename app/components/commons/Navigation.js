@@ -16,9 +16,13 @@ import Router from './Router';
 
 export default class Navigation extends Component {
     componentDidMount() {
+        //安卓返回键事件监听
         BackPress.addListener(this.navigation);
     }
 
+    /**
+     * 路由转跳的效果，默认是FadeAndroid
+     */
     configureScene(route, routeStact) {
         //如果路由有传 切换方式，则使用
         if (route.configureScene) {
@@ -28,14 +32,19 @@ export default class Navigation extends Component {
         }
     }
 
+    /**
+     * 渲染视图，传递props
+     */
     renderScene(route, navigator) {
         this.router = this.router || new Router(navigator);
-        //通过 params传递props
+        //把actions直接传递给每个通过路由转跳的页面，其他参数则通过  route.params传递，它可覆盖actions
+        this.actions = this.actions || route.params.actions;
         if (route.component) {
             const MyComponent = route.component;
             return (
                 <MyComponent
                     router={this.router}
+                    actions={this.actions}
                     {...route.params}
                     />
             )
@@ -56,4 +65,6 @@ export default class Navigation extends Component {
     }
 }
 
-Navigator.propTypes = {}
+Navigator.propTypes = {
+    actions: PropTypes.object.isRequired
+}
