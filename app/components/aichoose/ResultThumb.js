@@ -15,7 +15,6 @@ import React,{
 import CSS_VALUE from '../../config/globalCssValue';
 import STYLE_SHEET from '../../config/globalStyleSheet';
 
-import Result from './Result';//选装结果页
 
 let styles = StyleSheet.create({
     container: {
@@ -54,10 +53,8 @@ export default class ResultThumb extends Component {
     }
 
     onPress() {
-        const {navigator} = this.props;
-        navigator.push({
-            component:Result
-        })
+        const {router} = this.props;
+        router.toResult(this.props);
     }
 
     //获取第一出线的跑鞋的信息

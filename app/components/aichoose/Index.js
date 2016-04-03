@@ -10,7 +10,6 @@ import React,{
     Text,
     Image,
     TouchableOpacity,
-    Navigator
 } from 'react-native';
 
 import CSS_VALUE from '../../config/globalCssValue';
@@ -64,14 +63,12 @@ let styles = StyleSheet.create({
 export default class Index extends Component {
 
     onStartPress() {
-        const {actions,navigator} =this.props;
-        navigator.push({
-            component: Feeling,
-        });
+        const {actions,router} =this.props;
+        router.toChooseFeeling({actions:actions});
     }
 
     render() {
-        const {actions,tabSelect,hasLastResult,lastResult,equips,navigator} =this.props;
+        const {actions,tabSelect,hasLastResult,lastResult,equips,router} =this.props;
 
         return (
             <View style={STYLE_SHEET.COLUMN_CONTAINER}>
@@ -87,7 +84,7 @@ export default class Index extends Component {
                         <ResultThumb lastResult={lastResult}
                                      equips={equips}
                                      actions={actions}
-                                     navigator={navigator}/>
+                                     router={router}/>
                     </View>
                     }
                     <View style={styles.btnStart}>

@@ -14,6 +14,7 @@ let styles = StyleSheet.create({});
 
 export default class Result extends Component {
     render() {
+        console.log(this.props);
         return (
             <View>
                 <Text>这就是结果</Text>

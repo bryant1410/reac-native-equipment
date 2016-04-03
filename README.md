@@ -62,6 +62,7 @@
 * [DeepShare](http://www.deepshare.io/price/) 
 * [百川推送](http://baichuan.taobao.com/doc2/detail.htm?spm=a3c0d.7929580.0.0.0NRArQ&treeId=29&articleId=102337&docType=1) 阿里旗下的百川推送
 * [腾讯Bugly](http://bugly.qq.com/) app质量跟踪平台
+* [分词搜查](http://yunsou.qq.com/) 腾讯旗下的分词 搜索工具
 ## 原生组件
 
 - **Component** 组件抽象类

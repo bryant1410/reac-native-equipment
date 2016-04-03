@@ -30,3 +30,59 @@ export const EQUIP_FILTER_FACOTR={
     'RUN_PROTECTIVE':['brand','price_range','style','application'],//品牌、价格、款式、适用情况
     ''
 }
+
+export const EQUIP_FILTER={
+    selectedItems: {
+        'brand': [
+            {'name': '所有品牌', 'value': ''},
+            {'name': '亚瑟士', 'value': 104},
+            {'name': '耐克', 'value': 105},
+            {'name': '新百伦', 'value': 106},
+            {'name': '布鲁克斯', 'value': 107},
+            {'name': '李宁', 'value': 108},
+            {'name': '安德玛', 'value': 109},
+            {'name': '卡虎', 'value': 110},
+            {'name': '爱步', 'value': 111},
+            {'name': '所康尼', 'value': 112},
+            {'name': '阿迪达斯', 'value': 113},
+            {'name': 'HOKA ONE ONE', 'value': 114},
+            {'name': 'INOVE-8', 'value': 115},
+            {'name': '盖世威', 'value': 116},
+            {'name': '迈乐', 'value': 117},
+            {'name': '美津浓', 'value': 118},
+            {'name': '蒙特利尔', 'value': 119},
+            {'name': '牛顿', 'value': 120},
+            {'name': 'ON', 'value': 121},
+            {'name': '彪马', 'value': 122},
+            {'name': '锐步', 'value': 123},
+            {'name': '萨洛蒙', 'value': 124},
+            {'name': '斯凯奇', 'value': 125},
+            {'name': 'ZOOT', 'value': 126},
+            {'name': '多威 do win', 'value': 210}
+        ],
+        'price_range': [
+            {'name': '价格不限', 'value': ''},
+            {'name': '300以下', 'value': 'lt,300'},
+            {'name': '300 ~ 500', 'value': '300,500'},
+            {'name': '500 ~ 800', 'value': '500,800'},
+            {'name': '800以上', 'value': 'gt,800'},
+        ],
+        'fit_type': [
+            {'name': '全部类型', 'value': '0'},
+            {'name': '缓震型', 'value': 127},
+            {'name': '支撑型', 'value': 128},
+            {'name': '控制型', 'value': 129},
+        ],
+        'distance': [
+            {'name': '跑量不限', 'value': ''},
+            {'name': '5公里以内', 'value': 136},
+            {'name': '5 ~ 10公里', 'value': 137},
+            {'name': '10公里以上', 'value': 138}
+        ],
+        'gender': [
+            {'name': '不限', 'value': ''},
+            {'name': '男', 'value': 139},
+            {'name': '女', 'value': 140}
+        ]
+    },
+}
