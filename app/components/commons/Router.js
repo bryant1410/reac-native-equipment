@@ -16,12 +16,18 @@ export default class Router {
     }
 
     /**
-     * 弹出
+     * 弹出当前
      */
     pop() {
         this.navigator.pop();
     }
 
+    /**
+     * 弹到最初
+     */
+    popToTop(){
+        this.navigator.popToTop();
+    }
     //params是个对象
     toChooseFeeling(params) {
         this.navigator.push({

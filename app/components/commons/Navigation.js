@@ -11,15 +11,18 @@ import React,{
     Navigator
 } from 'react-native';
 
-import BackPress from '../../utils/BackPress';
+import BackPress from './BackPress';
 import Router from './Router';
 
 export default class Navigation extends Component {
     componentDidMount() {
         //安卓返回键事件监听
-        BackPress.addListener(this.navigation);
+        this.backPress = new BackPress(this.navigation);
     }
-
+    componentWillUnmount(){
+        //解除安卓返回键监听事件
+        this.backPress.removeListener();
+    }
     /**
      * 路由转跳的效果，默认是FadeAndroid
      */
@@ -66,5 +69,5 @@ export default class Navigation extends Component {
 }
 
 Navigator.propTypes = {
-    actions: PropTypes.object.isRequired
+    initialRoute:PropTypes.object.isRequired
 }
