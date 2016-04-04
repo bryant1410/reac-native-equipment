@@ -35,6 +35,8 @@ import Equipment from './Equipment';//装备库
 import Utils from './Utils';//工具
 import About from './About';//关于
 
+//热更新
+import codePush from 'react-native-code-push';
 
 class App extends Component {
     constructor(props) {
@@ -43,7 +45,15 @@ class App extends Component {
 
     //在这里判断是否第一次进来，是则展示 Intro
     componentDidMount() {
-
+        codePush.checkForUpdate()
+            .then((update) => {
+                if (!update) {
+                    console.log("The app is up to date!");
+                } else {
+                    console.log("An update is available! Should we download it?");
+                    codePush.sync();
+                }
+            });
     }
 
     render() {

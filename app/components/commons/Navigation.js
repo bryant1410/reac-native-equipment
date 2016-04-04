@@ -19,10 +19,12 @@ export default class Navigation extends Component {
         //安卓返回键事件监听
         this.backPress = new BackPress(this.navigation);
     }
-    componentWillUnmount(){
+
+    componentWillUnmount() {
         //解除安卓返回键监听事件
         this.backPress.removeListener();
     }
+
     /**
      * 路由转跳的效果，默认是FadeAndroid
      */
@@ -39,6 +41,7 @@ export default class Navigation extends Component {
      * 渲染视图，传递props
      */
     renderScene(route, navigator) {
+        //router是传递给其他组件，用于路由跳转的类
         this.router = this.router || new Router(navigator);
         //把actions直接传递给每个通过路由转跳的页面，其他参数则通过  route.params传递，它可覆盖actions
         this.actions = this.actions || route.params.actions;
@@ -69,5 +72,5 @@ export default class Navigation extends Component {
 }
 
 Navigator.propTypes = {
-    initialRoute:PropTypes.object.isRequired
+    initialRoute: PropTypes.object.isRequired
 }

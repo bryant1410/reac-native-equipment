@@ -25,9 +25,10 @@ export default class Router {
     /**
      * 弹到最初
      */
-    popToTop(){
+    popToTop() {
         this.navigator.popToTop();
     }
+
     //params是个对象
     toChooseFeeling(params) {
         this.navigator.push({
