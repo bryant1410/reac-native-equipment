@@ -131,6 +131,10 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 - **变量**尽量使用 let
 - **常量**必须使用 const
 
+### 字符串
+静态字符串一律使用单引号，不适用双引号。   
+动态字符串使用反引号.
+
 ### 解构
 - 已经声明的变量不能再用于解构值
 - 若函数形参为对象时，使用对象解构赋值
@@ -140,6 +144,49 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 		let { opt1 , opt2 } = obj;
 	}
 ```
+
+### 对象
+对象尽量静态化，已经定义的变量，就不随意添加新的属性。   
+如果添加属性无可避免，则使用 `Object.assign`。
+
+```
+const a = {};
+
+Object.assign(a,{x:3});
+
+```
+
+### 数组
+使用扩展运算符（...）复制数据
+
+```
+//不好的方式
+let arr = [1,2,3,4];
+let copy_arr=[];
+
+for(let i=0,l=arr.length; i<l; i++){
+	copy_arr.push(i);	
+}
+
+//好的方式
+const copy_arr = [...arr];
+
+```
+
+### 模块
+Module语法是javascript的标准语法。
+
+- 使用**import**代替require
+- 使用**export**代替module.exports
+- 当模块只有一个输出值是，使用 **export default**
+
+
+```
+	import {func1,func2} from 'moduleA';
+	
+	export default moduleA;
+```
+
 
 ### 组件
 **组件声明** 使用 class 和 extends 关键字。需要导出的组件直接在class关键词前使用 export default
@@ -261,7 +308,7 @@ const {width , height} = Dimensions.get('window');
 ```
 
 #### 在安卓上，使用navtigator切换时，解决流畅
-配置**configureScene**为 FadeAndroid
+配置**configureScene**为 **FadeAndroid**
 
 ```
 	<Navigator
@@ -271,9 +318,14 @@ const {width , height} = Dimensions.get('window');
 
 
 
-##已知问题
+## 已知问题
 
 ## 运行
 #### android
 1. 打开模拟器（`android avd`），或者链接真机
 2. 进入项目目录，运行 `react-native run-android`
+
+
+## 其他
+
+[es6教程](http://es6.ruanyifeng.com/#docs/style)
