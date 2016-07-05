@@ -128,8 +128,8 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 使用驼峰命名且首字母大写，如 TextView.js
 
 ### 变量与常量声明
-- **变量**尽量使用 let
-- **常量**必须使用 const
+- **变量**尽量使用 let（变量只在声明代码块内有效，不存在变量提升）
+- **常量**必须使用 const （意味着不能修改）
 
 ### 字符串
 静态字符串一律使用单引号，不适用双引号。   
@@ -137,7 +137,8 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 
 ### 解构
 - 已经声明的变量不能再用于解构值
-- 若函数形参为对象时，使用对象解构赋值
+- 如果函数返回多个值，优先使用对象的解构赋值，而不是数据的解构赋值。
+- 若函数形参为对象时，优先使用对象解构赋值
 
 ```
 	function someFun( obj ){
@@ -173,19 +174,95 @@ const copy_arr = [...arr];
 
 ```
 
+### 函数
+立即执行函数可以写成箭头函数的形式
+
+```
+(()=>{
+	console.log();
+})
+
+```
+    
+箭筒函数取代了 `Function.prototype.bind`，不应再使用 self/that这些来绑定this   
+使用默认值语法设置函数参数默认值
+
+```
+//bad
+function handleThings(opts){
+	opts = opts || {};
+}
+
+
+//good
+ function handleThings ( opts ={} ){
+ }
+
+```
+
+
+### Class
+总是使用Class，取代需要prototype的操作。因为Class的写法更简洁，更易于理解
+
+```
+// bad
+var OneClass = function(){
+
+}
+
+OneClass.prototype ={
+	someMethod:function(){
+	
+	}
+}
+
+
+// good
+
+Class OneClass {
+
+	constructor( opt ){
+		this.options ={
+		
+		}
+	}
+	
+	someMethod(){
+		//...
+	}
+}
+
+```
+使用 `extends` 实现继承，因为这更加简单，不会破坏 `instanceof`运算。
+
+
 ### 模块
 Module语法是javascript的标准语法。
 
-- 使用**import**代替require
-- 使用**export**代替module.exports
-- 当模块只有一个输出值是，使用 **export default**
+ 使用**import**代替require
 
+```
+// bad
+ const moduleA  = require('moduleA');
+ 
+// good
+
+ import moduleA from 'moduleA';
+
+```
+
+ 使用**export**代替module.exports  
+ 
+ 当模块只有一个输出值是，使用 **export default**
 
 ```
 	import {func1,func2} from 'moduleA';
 	
 	export default moduleA;
 ```
+
+如果模块默认输出一个函数，函数名的首字母应该小写   
+如果模块默认输出一个对象，对象名的首字母应该大写
 
 
 ### 组件
