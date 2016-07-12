@@ -394,7 +394,43 @@ const {width , height} = Dimensions.get('window');
 ```
 
 
+## 进行版本升级
 
+
+## 版本升级后的变更
+ - 引入React的做法发生变更
+ 之前：
+ 
+ ```
+ import React , { Component , View } from 'react-native';
+ 
+ ```
+ 现在：
+ 
+ ```
+ import React , { Component } from 'react';
+ import { View } from 'react-native;
+ 
+ ```
+ 
+ 属于React的包括：
+ 
+ ```
+ Children Component PropTypes createElement cloneElement isValidElement createClass createFactory createMixin
+ ```
+ 属于**ReactNative**的包括：
+ 
+ ```
+ 
+ hasReactNativeInitialized findNodeHandle render 
+ unmountComponentAtNode unmountComponentAtNodeAndRemoveContainer
+ unstable_batchedUpdates
+ View Text ListView 及所有原生组件
+ 
+ ```
+ 
+ 
+ 
 ## 已知问题
 
 ## 运行
