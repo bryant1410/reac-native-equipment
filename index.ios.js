@@ -1,6 +1,3 @@
-/**
- * Sample React Native App
- */
 'use strict';
 import React, {
   Component,
@@ -10,24 +7,31 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
 }
 from 'react-native';
 
+var MOCKED_MOVIES_DATA =[
+  {
+    title  : '标题',
+    year : '2015',
+    posters : {
+      thumbnail : 'http://i.imgur.com/UePbdph.jpg'
+    }
+  }
+]
+
 class equipment extends Component {
   render() {
+    const movie = MOCKED_MOVIES_DATA[0];
+    console.log(movie.posters.thumbnail);
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text>{movie.title}</Text>
+        <Text>{movie.year}</Text>
+        <Image style={styles.thumbnail}
+          source={{uri: movie.posters.thumbnail}}/>
       </View>
     );
   }
@@ -40,16 +44,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  thumbnail :{
+    width : 53,
+    height : 81,
+  }
 });
 
 AppRegistry.registerComponent('equipment', () => equipment);
