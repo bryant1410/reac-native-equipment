@@ -2,6 +2,7 @@ package com.equipment;
 
 import com.facebook.react.ReactActivity;
 import com.microsoft.codepush.react.CodePush;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -12,8 +13,7 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 
 public class MainActivity extends ReactActivity {
 
-
-	/**
+    /**
     * Override the getJSBundleFile method in order to let
     * the CodePush runtime determine where to get the JS
     * bundle location from on each app start
@@ -48,7 +48,7 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-        	new RNDeviceInfo(),
+            new RNDeviceInfo(),
             new MainReactPackage(),
             //new CodePush()
             new CodePush("cqEK3QF38d0n5Cq9fPi0YIBdgnRG414g1HcRe",this,BuildConfig.DEBUG)

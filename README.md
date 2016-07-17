@@ -1,11 +1,11 @@
 ## 目录
 - app 应用代码
   - **actions** 存放应用的action
-  	 - index.js action入口 
-  	 - application.js app全局的action 
+  	 - index.js action入口
+  	 - application.js app全局的action
   - **assets** 存放应用需要的本地图片、附件等
   - **config** 存放配置文件，譬如微信的key之类的
-  	 - api.js 网络请求地址 
+  	 - api.js 网络请求地址
   	 - globalCssValue.js ui规范的设计值
      - actionType.js redux的acton.type的全局存放
   - **components** 存放组件模块
@@ -26,8 +26,8 @@
   	 - application.js app全局公用的reducer
   	 - index.js  reducer入口
   - **utils** app的工具模块，如日期计算、远程连接、本地存储等通用工具  
-  	 - Ajax.js 远程请求封装 
-  	 - BackPress.js 返回按钮监控 
+  	 - Ajax.js 远程请求封装
+  	 - BackPress.js 返回按钮监控
   	 - create-reducer.js reducer生成器
   - **root.js** 应用最顶层入口
 - data 应用的本地数据
@@ -50,7 +50,7 @@
 
 ## 插件
 
-* [react-native](http://facebook.github.io/react-native/) 
+* [react-native](http://facebook.github.io/react-native/)
 * [react-redux](https://github.com/reactjs/react-redux) ，作为应用的状态容器管理。这里是[中文手册](http://camsong.github.io/redux-in-chinese/index.html)。
 * [realm](https://realm.io/cn/) Realm是一个极速的、简单轻巧的、跨平台的、面向对象的移动存储数据库。
 * [react-native-overlay](https://github.com/brentvatne/react-native-overlay) RN界的懒加载
@@ -59,10 +59,11 @@
 * [react-native-swiper](https://github.com/leecade/react-native-swiper) 号称最好的幻灯片组件
 * [code-push](http://microsoft.github.io/code-push/docs/getting-started.html) 微软出品，热更新工具。
 * [Bughd](http://bughd.com/ ) 内测分发 和 实时监控appCash ， 邀请码生成。
-* [DeepShare](http://www.deepshare.io/price/) 
+* [DeepShare](http://www.deepshare.io/price/)
 * [百川推送](http://baichuan.taobao.com/doc2/detail.htm?spm=a3c0d.7929580.0.0.0NRArQ&treeId=29&articleId=102337&docType=1) 阿里旗下的百川推送
 * [腾讯Bugly](http://bugly.qq.com/) app质量跟踪平台
 * [分词搜查](http://yunsou.qq.com/) 腾讯旗下的分词 搜索工具
+* [react-native-jpush](https://github.com/reactnativecn/react-native-jpush) 极光推送
 
 
 ## 原生组件
@@ -166,7 +167,7 @@ let arr = [1,2,3,4];
 let copy_arr=[];
 
 for(let i=0,l=arr.length; i<l; i++){
-	copy_arr.push(i);	
+	copy_arr.push(i);
 }
 
 //好的方式
@@ -183,7 +184,7 @@ const copy_arr = [...arr];
 })
 
 ```
-    
+
 箭筒函数取代了 `Function.prototype.bind`，不应再使用 self/that这些来绑定this   
 使用默认值语法设置函数参数默认值
 
@@ -212,7 +213,7 @@ var OneClass = function(){
 
 OneClass.prototype ={
 	someMethod:function(){
-	
+
 	}
 }
 
@@ -223,10 +224,10 @@ Class OneClass {
 
 	constructor( opt ){
 		this.options ={
-		
+
 		}
 	}
-	
+
 	someMethod(){
 		//...
 	}
@@ -244,7 +245,7 @@ Module语法是javascript的标准语法。
 ```
 // bad
  const moduleA  = require('moduleA');
- 
+
 // good
 
  import moduleA from 'moduleA';
@@ -252,12 +253,12 @@ Module语法是javascript的标准语法。
 ```
 
  使用**export**代替module.exports  
- 
+
  当模块只有一个输出值是，使用 **export default**
 
 ```
 	import {func1,func2} from 'moduleA';
-	
+
 	export default moduleA;
 ```
 
@@ -302,7 +303,7 @@ Module语法是javascript的标准语法。
 ```
 	<Demo
 		userName=''
-		age='' 
+		age=''
 	/>
 ```
 
@@ -313,7 +314,7 @@ Module语法是javascript的标准语法。
 ```
   //点击事件
   onItemPress(){
-  
+
   }
 ```
 - 对于渲染子视图的，方法前加 render 前缀
@@ -337,8 +338,9 @@ Module语法是javascript的标准语法。
 
 ```
 	'use strict';
-	import React ,{
-		Component,
+    import React ,{Component} from 'react';
+
+	import {
 		StyleSheet,
 		PropTypes,
 		View,
@@ -346,7 +348,7 @@ Module语法是javascript的标准语法。
 	//声明样式
 	let styles = StyleSheet.create({
 	});
-	
+
 	export default class Demo extends Component{
 		render(){
 			return(
@@ -354,7 +356,7 @@ Module语法是javascript的标准语法。
 			)
 		}
 	}
-	
+
 	Demo.propTypes ={
 		demo : PropTypes.string.isRequired
 	}
@@ -369,7 +371,7 @@ Module语法是javascript的标准语法。
 可以通过点击事件改变hash，外层监听 onNavigationStateChange；
 或者使用 [react-native-webview-bridge](https://github.com/alinz/react-native-webview-bridge)
 
-#### 获取屏幕长宽 
+#### 获取屏幕长宽
 
 ```
 import Dimensions from 'Dimensions';
@@ -394,43 +396,156 @@ const {width , height} = Dimensions.get('window');
 ```
 
 
+
+
+
 ## 进行版本升级
 
+1. 升级项目模板文件，先复制android、ios项目文件
+2. 运行 `react-native upgrade`，这个命令会检测最新的项目模板，覆盖。
+3. 用代码对比工具，把自己修改过的代码搬运到新的文件中。
 
 ## 版本升级后的变更
  - 引入React的做法发生变更
  之前：
- 
+
  ```
  import React , { Component , View } from 'react-native';
- 
+
  ```
  现在：
- 
+
  ```
  import React , { Component } from 'react';
  import { View } from 'react-native;
- 
+
  ```
- 
+
  属于React的包括：
- 
+
  ```
  Children Component PropTypes createElement cloneElement isValidElement createClass createFactory createMixin
  ```
  属于**ReactNative**的包括：
- 
+
  ```
- 
- hasReactNativeInitialized findNodeHandle render 
+
+ hasReactNativeInitialized findNodeHandle render
  unmountComponentAtNode unmountComponentAtNodeAndRemoveContainer
  unstable_batchedUpdates
  View Text ListView 及所有原生组件
- 
+
  ```
- 
- 
- 
+
+
+
+
+
+
+
+
+
+## 快速开始
+### 声明样式
+
+```
+
+const styles = StyleSheet.create({
+	...
+});
+
+```
+
+`StyleSheet.create`可以把样式值转化成普通的数字id，数字id指向一个内部的样式表，以此来使得样式值不可更改和不可见。
+
+### 使用样式
+
+```
+	<View style={styles.base}></View>
+
+	//数组形式接收多个样式，
+	//为了避免多个值冲突，最右值得元素优先级最高
+	<View style={[style.base , style.background]}></View>
+
+	//也接收布尔值，false时会忽略
+	<View style={[style.base , is_active && styles.active]}></View>
+
+
+	//直接在组件上设置
+	<View
+		style={[styles.base , {width : 13 , height : 13}]}
+	></View>
+
+```
+
+### 将样式作为参数传递
+把样式作为参数传递，可以让调用组件的地方对其子组件的样式进行自定义。可以使用 `View.propTypes.style`和 `Text.propTypes.style`来确保传递的参数确实是style类型。
+
+### 静态图片资源
+
+往app中添加静态图片，只需要把它放在代码文件夹中某处。Package会在组件所在的文件夹下查找图片，如果用 `icon.ios.png` 和 `icon.android.png`，Package会根据不同平台选择不同文件。   
+
+另外，还可以使用 `@2x`、`@3x`这样的文件名后缀，为不同屏幕精度提供图片，如
+`icon@2x.png`、`icon@3x.png`。如果没有图片恰好满足分辨率，则会自动选中最接近的一个图片。
+
+注意 **require中的图片名字必须是一个静态字符串！！！**
+
+```
+	<Image source={require('./my-icon.png')} />
+```
+
+### 网络图片
+网络图片与静态图片的区别是： **网络图片需要手动指定图片的尺寸**，即 width 和 height
+
+### 实现背景图片
+在需要背景图的子组件嵌入Image组件中就可以
+
+```
+	<Image source={{uri:xxx}}>
+		<Text>子组件</Text>
+	</Image>
+
+```
+
+### 特定平台扩展
+
+`Platform.select()` 可以以Platform.OS为key，从传入的对象中返回对应平台的值
+
+```
+var { Platform } = React;
+
+var styles = StyleSheet.create({
+
+	container : {
+		flex: 1,
+		...Platform.select({
+			ios : {
+			
+			},
+			android : {
+			
+			}
+		})
+	}
+})
+
+
+var Component = Platform.select({
+	ios : ()=> require('ComponentIOS'),
+	android : ()=> require('ComponentAndroid'),
+})();
+
+<Component />
+
+```
+
+另外 `Platform.OS`在ios上会返回 **ios**，安卓平台则是 **android**
+
+在android上，通过 `Platform.Version `可以检测当前所运行的android平台版本。
+
+### 
+
+
 ## 已知问题
 
 ## 运行

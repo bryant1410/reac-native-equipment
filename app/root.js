@@ -5,7 +5,7 @@
 
 import React , {
     Component
-} from 'react-native';
+} from 'react';
 /**
  * 应用中所有的state都以一个对象树的形式存储在一个单一的store中
  * 唯一改变state的方式是触发action，一个描述发生什么的对象。
@@ -39,4 +39,3 @@ export default class Root extends Component{
         )
     }
 }
-
