@@ -64,6 +64,8 @@
 * [腾讯Bugly](http://bugly.qq.com/) app质量跟踪平台
 * [分词搜查](http://yunsou.qq.com/) 腾讯旗下的分词 搜索工具
 * [react-native-jpush](https://github.com/reactnativecn/react-native-jpush) 极光推送
+* [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) 多达3000个图标
+* 
 
 
 ## 原生组件
@@ -395,6 +397,15 @@ const {width , height} = Dimensions.get('window');
 		/>
 ```
 
+#### inline-block
+实现inline-block，只需要在Text组件外层添加Text组件
+
+```
+	<Text>
+		<Text>...</Text>
+	</Text>
+
+```
 
 
 
@@ -520,10 +531,10 @@ var styles = StyleSheet.create({
 		flex: 1,
 		...Platform.select({
 			ios : {
-			
+
 			},
 			android : {
-			
+
 			}
 		})
 	}
@@ -543,7 +554,7 @@ var Component = Platform.select({
 
 在android上，通过 `Platform.Version `可以检测当前所运行的android平台版本。
 
-### 
+###
 
 
 ## 已知问题

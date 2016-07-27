@@ -11,6 +11,13 @@ import React , {
  * 唯一改变state的方式是触发action，一个描述发生什么的对象。
  * 为了描述action如何改变state的数据，需要编写 reducers。
  */
+/**
+ * createStore方法，创建一个Reudx store来存放应用中所有的staet。
+ *
+ * 当store创建后，Redux会 dispatch一个action到reducer中，来用初始的state填充store。
+ * 我们不需要处理这个action。但要记住，如果第一个参数也就是传入的state，如果是undefined的话，
+ * Reudcer应该返回初始的state值。
+ */
 import {createStore , applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 

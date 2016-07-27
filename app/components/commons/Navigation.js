@@ -3,8 +3,9 @@
  * 封装导航后，通过 Router 管理所有页面。
  * router.toXXX(params);
  */
-import React,{
-    Component,
+
+import React , {Component} from 'react';
+import {
     StyleSheet,
     PropTypes,
     View,
