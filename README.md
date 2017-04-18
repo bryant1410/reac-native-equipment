@@ -124,7 +124,7 @@ AsyncStorage是rn自带的简单的、异步的、持久化的Key-Value存储系
 
 
 
-##约定
+## 约定
 具体可参考 [AIRBNB的react代码规范](https://github.com/cnsnake11/react-native-coding-style)
 
 ### 文件名
@@ -328,7 +328,7 @@ Module语法是javascript的标准语法。
 ```
 
 
-###关于action
+### 关于action
 当调用异步API时，一般都需要三个状态：请求开始、请求成功、请求错误。
 为了区分这三种状态，我们在action中添加一个专门的status字段作为标记位。
 
